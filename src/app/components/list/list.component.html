@@ -1,0 +1,37 @@
+<!-- <app-header></app-header> -->
+<div class="list-section">
+	<div class="list-container">
+
+		<div class="card mt-3 list-Area" id="card">
+      <div class="card-header cardHead">Uploaded Files</div>
+      <ul
+        class="list-group list-group-flush ul-list"
+        *ngFor="let file of fileInfos | async"
+      >
+        <li class="list-group-item list-item">
+          <h5>{{file.name}}</h5>
+          <!-- <a href="{{ file.url }}">{{ file.name }}</a> -->
+          <div class="links">
+            <a href="{{ file.url }}"><button>download</button></a>
+            <div class="links-btn">
+              <button class="edit"(click)="edit(file.id)"> edit </button>
+              <button class="delete"(click)="deletepost(file.id)">delete</button>
+              
+            </div>
+          </div>
+
+          <!-- <button >Edit</button> -->
+    
+          <!-- <p>{{file.id}}</p> -->
+        </li>
+      </ul>
+    
+      <!-- <button routerLink="../list">List</button> -->
+    </div>
+    
+	</div>
+  <button id="add" routerLink="/components/file-upload"> Back </button>
+</div>
+<div class="image">
+  <img id="image"src="https://img.freepik.com/free-vector/digital-personal-files-concept-illustration_114360-4407.jpg?size=338&ext=jpg&ga=GA1.2.1678189651.1651481731" alt="">
+</div>

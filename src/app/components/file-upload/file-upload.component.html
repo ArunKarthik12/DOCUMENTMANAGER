@@ -1,0 +1,91 @@
+<app-header></app-header>
+<div class="upload-section">
+ 
+	<div class="img">
+		<img id="image2" src="https://img.freepik.com/free-vector/group-people-working-together_52683-28615.jpg?size=626&ext=jpg&ga=GA1.2.1678189651.1651481731">
+	</div>
+  <div class="formimage">
+    <img id="formimage" src="" alt="">
+  </div>
+
+  <div class="sec2">
+    <div class="sec2-pos1">
+  <div class="row">
+    <div class="selectfile">
+      <div class="radio">
+        <h6><b> Choose Type </b></h6>
+        <input type="radio" value="pdf" class="" name="exampleRadios" (click)="checkradio($event)" id="exampleRadios1" > Pdf &nbsp;
+        <input type="radio" value="word" class=""  name="exampleRadios" (click)="checkradio($event)" id="exampleRadios2"> Word &nbsp;
+        <input type="radio"  value="excel" class="" name="exampleRadios" (click)="checkradio($event)" id="exampleRadios3"> Excel &nbsp;
+
+      </div>
+      <br>
+      <h6> <b>Import File</b> </h6>
+      <label class="btn btn-default p-0">
+        <div>
+          <div *ngIf="conditionPdf">
+            <input class="btn btn-light" type="file" id="myfile" (change)="showfile($event)"accept="application/pdf">
+        </div>
+        <div *ngIf="conditionExcel">
+            <input class="btn btn-light" type="file" id="myfile" (change)="showfile($event)" accept="application/excel,.xls,.xlsx">
+        </div>
+        <div *ngIf="conditionWord">
+            <input class="btn btn-light" type="file" id="myfile" (change)="showfile($event)" accept="application/docx,.doc,.docx">
+        </div>
+        </div>
+        <!-- <input  id="choose"type="file" (change)="selectFile($event)" /> -->
+      </label>
+    </div>
+  </div>
+  <div class="upload">
+    <button class="btn" id="upload" [disabled]="!selectedFiles" (click)="upload()">
+      Upload
+    </button>
+  </div>
+  <!-- <div *ngIf="currentFile" class="progress my-3">
+    <div
+      class="progress-bar progress-bar-info progress-bar-striped"
+      role="progressbar"
+      attr.aria-valuenow="{{ progress }}"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      [ngStyle]="{ width: progress + '%' }"
+    >
+      {{ progress }}%
+    </div>
+  </div> -->
+  <div class="msg-container">
+     <div *ngIf="message" class="alert alert-secondary msg" role="alert">{{ message }}</div>
+  </div>
+  <!-- <div class="card mt-3">
+    <div class="card-header">List of Files</div>
+    <ul
+      class="list-group list-group-flush"
+      *ngFor="let file of fileInfos | async"
+    >
+      <li class="list-group-item"> -->
+        <!-- <h5>{{file.name}}</h5> -->
+        <!-- <a href="{{ file.url }}">{{ file.name }}</a>
+        <a href="{{ file.url }}">download</a>
+        
+        <button (click)="deletepost(file.id)">delete</button>
+        <button (click)="edit(file.id)">Edit</button>
+        <button >Edit</button>
+  
+        <p>{{file.id}}</p>
+      </li>
+    </ul> -->
+    <div class="btn-list">
+    </div>
+  <!-- </div> -->
+  
+ </div> 
+</div>
+
+<button class="btn " id="add" routerLink="/components/create"> Back </button>
+<button class="btn " id="list" routerLink="/components/list"> Show Records </button>
+</div>
+
+
+
+
